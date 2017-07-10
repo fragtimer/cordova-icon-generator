@@ -15,19 +15,19 @@ var argv = require('yargs')
   .usage('Usage: $0 -s <source image> -o <output directory> [-r] [-f]')
   .alias('s', 'source')
   .alias('o', 'output')
-  
+
   .alias('r', 'round')
   .describe('round', 'Create rounded corners.')
 
   .alias('f', 'force')
   .boolean('f')
   .describe('force', 'Force deleting an existing output directory.')
-  
+
   .alias('t', 'targets')
   .array('targets')
   .default('targets', ['ios', 'android'])
   .describe('targets', 'Specify the platform targets (ios|android)')
-  
+
   .demand(['s', 'o'])
   .argv;
 
@@ -41,22 +41,30 @@ var targets = argv.targets;
 ///////////////////////////////////////////////////////////////////////
 
 var imageTargets = [
-  ['ios', 'icon-60@3x.png', 180],
-  ['ios', 'icon-60.png', 60],
-  ['ios', 'icon-60@2x.png', 120],
-  ['ios', 'icon-76.png', 76],
-  ['ios', 'icon-76@2x.png', 152],
+  ['ios', 'icon-20.png', 20],
+  ['ios', 'icon-20@2x.png', 40],
+  ['ios', 'icon-20@3x.png', 60],
+  ['ios', 'icon-24@2x.png', 48],
+  ['ios', 'icon-27.5@2x.png', 55],
+  ['ios', 'icon-29.png', 29],
+  ['ios', 'icon-29@2x.png', 58],
+  ['ios', 'icon-29@3x.png', 87],
   ['ios', 'icon-40.png', 40],
   ['ios', 'icon-40@2x.png', 80],
-  ['ios', 'icon.png', 57],
-  ['ios', 'icon@2x.png', 114],
-  ['ios', 'icon-72.png', 72],
-  ['ios', 'icon-72@2x.png', 144],
-  ['ios', 'icon-small.png', 29],
-  ['ios', 'icon-small@2x.png', 58],
+  ['ios', 'icon-44@2x.png', 88],
   ['ios', 'icon-50.png', 50],
   ['ios', 'icon-50@2x.png', 100],
+  ['ios', 'icon-57.png', 57],
+  ['ios', 'icon-57@2x.png', 114],
+  ['ios', 'icon-60@2x.png', 120],
+  ['ios', 'icon-60@3x.png', 180],
+  ['ios', 'icon-72.png', 72],
+  ['ios', 'icon-72@2x.png', 144],
+  ['ios', 'icon-76.png', 76],
+  ['ios', 'icon-76@2x.png', 152],
   ['ios', 'icon-83.5@2x.png', 167],
+  ['ios', 'icon-86@2x.png', 162],
+  ['ios', 'icon-98@2x.png', 196],
 
   ['android', 'ldpi.png', 36],
   ['android', 'mdpi.png', 48],
